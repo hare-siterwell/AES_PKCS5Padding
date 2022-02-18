@@ -4,8 +4,8 @@
  */
 #include "aes.h"
 
-#define KEY "NULL"
-#define PLAIN R"({})"
+#define KEY "Tt5CPXUAUZ2kxn9S"
+#define PLAIN R"({"productId": "TEST", "deviceName": "1000000001"})"
 
 /**
  * @brief Example program
