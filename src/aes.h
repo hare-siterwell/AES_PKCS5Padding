@@ -57,8 +57,7 @@ private:
   auto pos_of_char(const uint8_t &chr) -> uint32_t;
   auto Base64Encrypt(const uint8_t *in, uint32_t in_len, bool url = false)
       -> std::string;
-  auto Base64Decrypt(std::string encoded_string, bool remove_linebreaks = false)
-      -> std::string;
+  auto Base64Decrypt(std::string encoded_string) -> std::string;
 };
 
 } // namespace cipher

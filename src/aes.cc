@@ -226,7 +226,7 @@ auto AesEcbCipher::decode(const std::string &cipher) -> std::string {
     return {};
   }
 
-  auto original = Base64Decrypt(cipher, true);
+  auto original = Base64Decrypt(cipher);
 
   uint32_t decode_buf_size = original.length();
   // assume input has been padded well with pkcs5padding
@@ -490,15 +490,10 @@ auto AesEcbCipher::pos_of_char(const uint8_t &chr) -> uint32_t {
   return ret;
 }
 
-auto AesEcbCipher::Base64Decrypt(std::string encoded_string,
-                                 bool remove_linebreaks) -> std::string {
-  if (remove_linebreaks) {
-    encoded_string.erase(
-        std::remove(encoded_string.begin(), encoded_string.end(), '\r'),
-        encoded_string.end());
-    encoded_string.erase(
-        std::remove(encoded_string.begin(), encoded_string.end(), '\n'),
-        encoded_string.end());
+auto AesEcbCipher::Base64Decrypt(std::string encoded_string) -> std::string {
+  uint32_t i = 0;
+  while ((i = encoded_string.find("\r\n")) != -1) {
+    encoded_string.erase(i, 2);
   }
 
   auto length_of_string = encoded_string.length();
