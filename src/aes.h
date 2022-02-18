@@ -5,7 +5,7 @@
 #include <cstring>
 #include <iostream>
 
-#define MAX_BUF_LEN 1024 // 字符串最大长度
+#define MAX_BUF_LEN 1024
 
 namespace cipher {
 
