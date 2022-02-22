@@ -3,6 +3,7 @@
  * @brief Main program body
  */
 #include "aes.h"
+#include <iostream>
 
 #define KEY "Tt5CPXUAUZ2kxn9S"
 #define PLAIN R"({"productId": "TEST", "deviceName": "1000000001"})"

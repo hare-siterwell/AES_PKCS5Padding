@@ -5,8 +5,6 @@
 #include <cstring>
 #include <iostream>
 
-#define MAX_BUF_LEN 1024
-
 namespace cipher {
 
 class AesEcbCipher {
