@@ -10,7 +10,7 @@ file(GLOB SOURCES CONFIGURE_DEPENDS
 )
 
 # 生成静态库
-add_library(${PROJECT_NAME} STATIC ${SOURCES})
+add_library(${PROJECT_NAME} ${SOURCES})
 
 # 生成动态库
 # add_library(${PROJECT_NAME} SHARED ${SOURCES})

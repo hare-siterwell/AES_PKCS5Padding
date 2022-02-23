@@ -10,9 +10,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 # 设置动态库输出目录
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR})
 
-# 添加子目录
-add_subdirectory(aes)
-
 # 添加源文件
 file(GLOB SOURCES CONFIGURE_DEPENDS
     src/*.cc
@@ -25,3 +22,6 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 target_link_libraries(${PROJECT_NAME} PRIVATE
     aes
 )
+
+# 添加子目录
+add_subdirectory(aes)
